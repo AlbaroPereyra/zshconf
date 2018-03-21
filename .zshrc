@@ -36,11 +36,12 @@ plugins=(git);
 source $ZSH/oh-my-zsh.sh;
 
 # User configuration
-
-alias vi="vim";
 alias ls="ls -Glah";
-alias e="emacs -u root";
 
-# The following setting requires ccat
+# The following setting need special requirements
+# pkg install vim | apt-get install vim | brew install vim
+#alias vi="vim";
+# pkg install emacs25 | apt-get install emacs | brew install emacs
+#alias e="emacs";
 # pkg install ccat | apt-get install ccat | brew install ccat
-# alias cat="ccat"
+#alias cat="ccat"
