@@ -38,6 +38,16 @@ source $ZSH/oh-my-zsh.sh;
 # User configuration
 alias ls="ls -GlAhF";
 
+function cd {
+  # if cd does not have an argument its default behaviour is to go home
+  if [ -z "$1" ];
+  then
+    builtin cd ~ && ls;
+  else
+    builtin cd "$*" && ls;
+  fi
+}
+
 # The following setting need special requirements
 # pkg install vim | apt-get install vim | brew install vim
 #alias vi="vim";
