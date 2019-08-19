@@ -36,7 +36,7 @@ plugins=(git);
 source $ZSH/oh-my-zsh.sh;
 
 # User configuration
-alias ls="ls -Glah";
+alias ls="ls -GlAhF";
 
 # The following setting need special requirements
 # pkg install vim | apt-get install vim | brew install vim
