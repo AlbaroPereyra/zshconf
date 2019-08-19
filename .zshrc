@@ -43,5 +43,5 @@ alias ls="ls -GlAhF";
 #alias vi="vim";
 # pkg install emacs25 | apt-get install emacs | brew install emacs
 #alias e="emacs";
-# pkg install ccat | apt-get install ccat | brew install ccat
-#alias cat="ccat"
+# pkg install bat | apt-get install bat | brew install bat
+#alias cat="bat"
