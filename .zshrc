@@ -35,6 +35,9 @@ plugins=(git);
 
 source $ZSH/oh-my-zsh.sh;
 
+# You may manually need to set the LANG var
+#export LANG=en_US.UTF-8
+
 # User configuration
 alias ls="ls -GlAhF";
 
