@@ -40,6 +40,7 @@ plugins=(git);
 
 source $ZSH/oh-my-zsh.sh;
 
+
 # Personal favorites
 alias ls="ls -GlAhF";
 
@@ -116,6 +117,6 @@ function orth () {
 
 # I use this file to keep personal information such as HOMEBREW_API_TOKEN
 # as well as aliases to ssh into other hosts.
-source .personalZshrc
-# At the very end I execute a script to start screen.
-#sh bin/startScreen.sh
+#source .personalZshrc
+# At the very end I execute a script.
+#sh bin/startCLI.sh
