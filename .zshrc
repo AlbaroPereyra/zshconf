@@ -1,8 +1,8 @@
 #Albaro's .zshrc conf file
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/go/bin/:$PATH;
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh;
 
@@ -27,6 +27,11 @@ COMPLETION_WAITING_DOTS="true";
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy";
 
+# You may manually need to set the LANG var
+export LANG="en_US.UTF-8";
+export MAILDIR="/var/mail/$(whoami)";
+export TMPDIR="$HOME/tmp";
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -35,13 +40,82 @@ plugins=(git);
 
 source $ZSH/oh-my-zsh.sh;
 
-# User configuration
-alias ls="ls -Glah";
+# Personal favorites
+alias ls="ls -GlAhF";
 
-# The following setting need special requirements
-# pkg install vim | apt-get install vim | brew install vim
-#alias vi="vim";
-# pkg install emacs25 | apt-get install emacs | brew install emacs
-#alias e="emacs";
-# pkg install ccat | apt-get install ccat | brew install ccat
-#alias cat="ccat"
+function cd {
+  # if cd does not have an argument its default behaviour is to, go home
+  if [ -z "$1" ];
+  then
+    builtin cd ~ && ls -GlAhF;
+  else
+    builtin cd $* && ls -GlAhF;
+  fi
+}
+
+# #MAC OSX settings
+
+# Make an alies to the Emacs Application 
+# alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
+# Onlye Root has access to manipulate the httpd process.
+# alias httpd="sudo httpd";
+# # Requires brew install screen
+# alias screen="/usr/local/Cellar/screen/4.6.2/bin/screen-4.6.2"
+
+# # Make ifconfig more Windows-e
+# # The function asumes the user is usig DHCP.
+# function ifconfig {
+#   networkInterface=$(netstat -i | grep -E "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1 | awk '{printf "%s" ,$1}');
+#   # if ifconfig does not have an argument diplay only important information.
+#   if [ -z "$1" ] && [ -n "$networkInterface" ];
+#   then
+#     /sbin/ifconfig $networkInterface inet | grep inet |sed -r 's/^[[:blank:]]+//' | awk '{ printf "%-19s %s\n%-19s ", "IPv4 Address:", $2, "Subnet Mask:" }';
+#     ipconfig getoption $networkInterface subnet_mask;
+#     printf "%-19s " "Default Gateway:";
+#     ipconfig getoption $networkInterface router;
+#   else
+#     /sbin/ifconfig $*;
+#   fi
+# }
+
+# # FreeBSD Settings
+
+# #add some color to the terminal
+# export CLICOLOR=1
+# export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# # The following setting need special requirements
+
+# # pkg install emacs25 | apt-get install emacs | brew install emacs
+# export EDITOR="emacs";
+# alias e="emacs";
+# # pkg install bat | apt-get install bat | brew install bat
+# # Notice: bat does not include cat's -v option, you may
+# # have to use hexdump to find invisible charaters.
+# alias cat="bat"
+
+# Functions and hacks from the GNU essentials book
+
+# Type the name of the directory to change to that directory
+# $/opt to run $cd /opt
+setopt autocd autopushd
+
+# Changes to the previous directory d to display recently visited directorie
+# ex. $d;2
+alias d='dirs -v | head -10'
+
+# Used to compare emacs backup files
+function d~ {
+  # Compare the Emacs back-up version with the current version.
+  diff -u $1~ $1 | less
+}
+# Used to check spelling. 
+function orth () {
+  echo $* | ispell;
+}
+
+# I use this file to keep personal information such as HOMEBREW_API_TOKEN
+# as well as aliases to ssh into other hosts.
+source .personalZshrc
+# At the very end I execute a script to start screen.
+#sh bin/startScreen.sh
