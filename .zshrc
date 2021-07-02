@@ -56,12 +56,15 @@ function cd {
 
 # #MAC OSX settings
 
+# Make an alies to brew zsh
+# alias zsh="/usr/local/Cellar/zsh/5.8_1/bin/zsh";
 # Make an alies to the Emacs Application 
 # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
 # Onlye Root has access to manipulate the httpd process.
 # alias httpd="sudo httpd";
 # # Requires brew install screen
 # alias screen="/usr/local/Cellar/screen/4.6.2/bin/screen-4.6.2"
+
 
 # # Make ifconfig more Windows-e
 # # The function asumes the user is usig DHCP.
