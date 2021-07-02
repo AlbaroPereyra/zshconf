@@ -14,6 +14,7 @@ fileName=${repoUrl##*/};
 personalZshrcFile="${HOME}/.personalZshrc";
 
 #TODO
+# install zsh
 # install oh-my-zsh
 git clone $repoUrl ${HOME}/${fileName};
 mv ${HOME}/${fileName}/.zshrc ${HOME}/.zshrc;
