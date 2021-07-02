@@ -62,8 +62,7 @@ function cd {
 # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
 # Onlye Root has access to manipulate the httpd process.
 # alias httpd="sudo httpd";
-# # Requires brew install screen
-# alias screen="/usr/local/Cellar/screen/4.6.2/bin/screen-4.6.2"
+
 
 
 # # Make ifconfig more Windows-e
