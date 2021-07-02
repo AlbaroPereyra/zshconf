@@ -96,6 +96,7 @@ function cd {
 # alias cat="bat"
 
 # Functions and hacks from the GNU essentials book
+# https://shop.fsf.org/books-docs/introduction-command-line
 
 # Type the name of the directory to change to that directory
 # $/opt to run $cd /opt
