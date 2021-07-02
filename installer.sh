@@ -2,7 +2,7 @@
 
 if [ "X-h" = "X$1" ];
 then
-  cat<<EOF;
+  tee<<EOF;
 TODO help stuff.
 EOF
   exit 0;
@@ -13,8 +13,10 @@ repoUrl="https://github.com/albaropereyra/zshconf";
 fileName=${repoUrl##*/};
 personalZshrcFile="${HOME}/.personalZshrc";
 
-git clone $repoUrl ~/${fileName};
-mv ~/${fileName}/.zshrc ~/.zshrc;
+#TODO
+# install oh-my-zsh
+git clone $repoUrl ${HOME}/${fileName};
+mv ${HOME}/${fileName}/.zshrc ${HOME}/.zshrc;
 touch $personalZshrcFile
-rm -rf ~/${fileName};
+rm -rf ${HOME}/${fileName};
 printf "ZSH conf has been updated.\n";
