@@ -13,10 +13,13 @@ repoUrl="https://github.com/albaropereyra/zshconf";
 fileName=${repoUrl##*/};
 personalZshrcFile="${HOME}/.personalZshrc";
 
-if [ ! -e /usr/local/Cellar/zsh ];
+if [ "X$(uname -s)" = "XDarwin" ];
 then
-  # Install zsh
-  brew install zsh;
+  if [ ! -e /usr/local/Cellar/zsh ];
+  then
+    # Install zsh
+    brew install zsh;
+  fi
 fi
 
 if [ ! -e ${HOME}/.oh-my-zsh ];
