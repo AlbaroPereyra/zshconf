@@ -1,4 +1,10 @@
-#Albaro's .zshrc conf file
+# Albaro's .zshrc conf file
+
+# Use emacs to uncomment commented out code (ex. #,# #)
+# Select the region with Ctl + Space Bar
+# Then you can even use the arrow keys
+# To end region selection press Ctl + Space Bar again
+# The comment toggle shortcut is alt/option + ;
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
