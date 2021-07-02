@@ -60,9 +60,10 @@ function cd {
 # alias zsh="/usr/local/Cellar/zsh/5.8_1/bin/zsh";
 # Make an alies to the Emacs Application 
 # alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
-# Onlye Root has access to manipulate the httpd process.
+# Only root has access to manipulate the httpd process.
 # alias httpd="sudo httpd";
-
+# The following requires installation of drogon
+# alias drogon="drogon_ctl";
 
 
 # # Make ifconfig more Windows-e
