@@ -15,6 +15,16 @@ personalZshrcFile="${HOME}/.personalZshrc";
 
 if [ "X$(uname -s)" = "XDarwin" ];
 then
+  # -s returns 0 if found otherwise 1
+  which -s brew;
+  # $? exit status of previous command
+  if [ $? != 0 ];
+  then
+    # Install Homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+  fi
+  brew update;
+  brew upgrade;
   if [ ! -e /usr/local/Cellar/zsh ];
   then
     # Install zsh
