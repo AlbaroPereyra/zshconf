@@ -6,6 +6,9 @@
 # To end region selection press Ctl + Space Bar again
 # The comment toggle shortcut is alt/option + ;
 
+# If your are really serious about development.
+# The Kinesis Advantage 2 keyboard is recommended.
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
