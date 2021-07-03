@@ -8,6 +8,9 @@
 
 # If your are really serious about development.
 # The Kinesis Advantage 2 keyboard is recommended.
+# I personally bought the Kinesis Advantage 2 QD
+# The foot pedal might be a good option, to fool
+# micro managers.  I never got around getting it.
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
