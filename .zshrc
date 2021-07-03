@@ -75,7 +75,7 @@ function cd {
 # Only root has access to manipulate the httpd process.
 # alias httpd="sudo httpd";
 # The following requires installation of drogon
-# alias drogon="drogon_ctl";
+# alias dg="drogon_ctl";
 
 
 # # Make ifconfig more Windows-e
